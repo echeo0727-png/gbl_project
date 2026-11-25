@@ -10,3 +10,7 @@
 - 요청 요약: 원스토어 H5 Game SDK 기본 연동 및 일반 브라우저 폴백 추가
 - 수정한 파일: index.html, main.js, prompt.txt, work-log.md
 - 판단 근거: 공식 SDK 순서인 초기화·로딩 진행률·게임 시작과 lifecycle만 연결하고 광고·결제 API는 제외함
+- 날짜와 시각: 2026-11-25 16:55 KST
+- 요청 요약: 원스토어 SDK 초기화가 게임 코드보다 먼저 시작되도록 수정
+- 수정한 파일: index.html, prompt.txt, work-log.md
+- 판단 근거: SDK 초기화 지연으로 인한 미탑재 판정을 막기 위해 initializeAsync를 Phaser 로드보다 앞에 배치함

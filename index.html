@@ -48,30 +48,28 @@
         window.WorldTravelGame?.resume();
       });
 
-      await loadScript('https://cdn.jsdelivr.net/npm/phaser@3/dist/phaser.min.js');
-      await import('./main.js');
+      const initialized = sdk.initializeAsync();
+      const gameReady = loadScript('https://cdn.jsdelivr.net/npm/phaser@3/dist/phaser.min.js')
+        .then(() => import('./main.js'));
 
-      sdk.initializeAsync()
-        .then((info) => {
+      initialized
+        .then(async (info) => {
           if (info.err) {
-            window.WorldTravelGame.start();
+            await startGame();
             return;
           }
 
-          window.WorldTravelGame.setSoundMuted(info.ringerSilent === true);
           sdk.setLoadingProgress(0);
+          await gameReady;
+          window.WorldTravelGame.setSoundMuted(info.ringerSilent === true);
           sdk.setLoadingProgress(100);
 
-          return sdk.startGameAsync()
-            .then(() => window.WorldTravelGame.start())
-            .catch((error) => {
-              console.error('startGameAsync failed:', error.reason);
-              window.WorldTravelGame.start();
-            });
+          await sdk.startGameAsync();
+          await startGame();
         })
         .catch((error) => {
-          console.error('initializeAsync failed:', error.reason);
-          window.WorldTravelGame.start();
+          console.error('SDK boot failed:', error.reason);
+          startGame();
         });
 
       function loadScript(src) {
@@ -82,6 +80,10 @@
           script.onerror = reject;
           document.head.append(script);
         });
+      }
+
+      function startGame() {
+        return gameReady.then(() => window.WorldTravelGame.start());
       }
     </script>
   </body>
