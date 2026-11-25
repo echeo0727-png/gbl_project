@@ -6,3 +6,7 @@
 - 요청 요약: 모바일 세로형 실행 확인용 게임 첫 화면 구현
 - 수정한 파일: index.html, main.js, prompt.txt, work-log.md
 - 판단 근거: 명세의 시작 예산과 요청된 화면 문구·입력만 도형과 글자로 구성하고 [미정] 내용은 구현하지 않음
+- 날짜와 시각: 2026-11-25 16:51 KST
+- 요청 요약: 원스토어 H5 Game SDK 기본 연동 및 일반 브라우저 폴백 추가
+- 수정한 파일: index.html, main.js, prompt.txt, work-log.md
+- 판단 근거: 공식 SDK 순서인 초기화·로딩 진행률·게임 시작과 lifecycle만 연결하고 광고·결제 API는 제외함

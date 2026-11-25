@@ -44,15 +44,54 @@ class StartScene extends Phaser.Scene {
   }
 }
 
-new Phaser.Game({
-  type: Phaser.AUTO,
-  parent: 'game',
-  width: SCREEN_WIDTH,
-  height: SCREEN_HEIGHT,
-  backgroundColor: '#ffffff',
-  scale: {
-    mode: Phaser.Scale.FIT,
-    autoCenter: Phaser.Scale.CENTER_BOTH,
-  },
-  scene: StartScene,
-});
+let game;
+let soundMuted = false;
+
+function start() {
+  if (game) {
+    return;
+  }
+
+  game = new Phaser.Game({
+    type: Phaser.AUTO,
+    parent: 'game',
+    width: SCREEN_WIDTH,
+    height: SCREEN_HEIGHT,
+    backgroundColor: '#ffffff',
+    scale: {
+      mode: Phaser.Scale.FIT,
+      autoCenter: Phaser.Scale.CENTER_BOTH,
+    },
+    scene: StartScene,
+  });
+
+  game.sound.mute = soundMuted;
+}
+
+function pause() {
+  if (!game) {
+    return;
+  }
+
+  game.scene.pause('StartScene');
+  game.sound.pauseAll();
+}
+
+function resume() {
+  if (!game) {
+    return;
+  }
+
+  game.scene.resume('StartScene');
+  game.sound.resumeAll();
+}
+
+function setSoundMuted(muted) {
+  soundMuted = muted;
+
+  if (game) {
+    game.sound.mute = soundMuted;
+  }
+}
+
+window.WorldTravelGame = { start, pause, resume, setSoundMuted };
