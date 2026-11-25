@@ -2,3 +2,7 @@
 - 요청 요약: 게임 명세 하단에 출시 정책을 추가
 - 수정한 파일: /Users/heoeunchae/Downloads/spec.md, prompt.txt, work-log.md
 - 판단 근거: 요청된 배포·SDK·브라우저·광고·결제 정책만 새 출시 항목에 반영함
+- 날짜와 시각: 2026-11-25 16:14 KST
+- 요청 요약: 모바일 세로형 실행 확인용 게임 첫 화면 구현
+- 수정한 파일: index.html, main.js, prompt.txt, work-log.md
+- 판단 근거: 명세의 시작 예산과 요청된 화면 문구·입력만 도형과 글자로 구성하고 [미정] 내용은 구현하지 않음

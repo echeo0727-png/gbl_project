@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>100만 원으로 세계여행하기</title>
+    <style>
+      * { box-sizing: border-box; }
+
+      html, body {
+        width: 100%;
+        min-height: 100%;
+        margin: 0;
+      }
+
+      body {
+        display: grid;
+        min-height: 100vh;
+        place-items: center;
+        background: #e6e6e6;
+      }
+
+      #game {
+        width: 100%;
+        max-width: 480px;
+      }
+
+      canvas {
+        display: block;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <main id="game" aria-label="100만 원으로 세계여행하기 게임"></main>
+
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3/dist/phaser.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
