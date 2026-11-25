@@ -1,0 +1,4 @@
+- 날짜와 시각: 2026-11-25 16:08 KST
+- 요청 요약: 게임 명세 하단에 출시 정책을 추가
+- 수정한 파일: /Users/heoeunchae/Downloads/spec.md, prompt.txt, work-log.md
+- 판단 근거: 요청된 배포·SDK·브라우저·광고·결제 정책만 새 출시 항목에 반영함
